@@ -1,0 +1,12 @@
+<?php
+/* porque esta dentro de una carpeta de app */
+namespace App\controllers;
+use App\ViewManager;
+
+class HomeController
+{
+    public function index() {
+        $viewManager = new ViewManager();
+        $viewManager->renderTemplate("index.view.html");
+    }
+}
