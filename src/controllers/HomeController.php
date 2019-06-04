@@ -1,11 +1,20 @@
 <?php
-/* porque esta dentro de una carpeta de app */
+
 namespace App\controllers;
+
 use App\ViewManager;
+use DI\Container;
 
 class HomeController
 {
-    public function index() {
+    private $container;
+
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
+    public function index()
+    {
         $viewManager = new ViewManager();
         $viewManager->renderTemplate("index.view.html");
     }
