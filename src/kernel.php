@@ -5,7 +5,6 @@ namespace App;
 use App\routing\web;
 use DI\ContainerBuilder;
 use DI\Container;
-use Kint\Kint;
 
 class kernel
 {
@@ -15,7 +14,6 @@ class kernel
     public function __construct()
     {
         $this->container = $this->createContainer();
-        Kint::dump($this->container);
         $this->logger = $this->container->get(LogManager::class);
     }
 
@@ -34,10 +32,5 @@ class kernel
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->useAutowiring(true);
         return $containerBuilder->build();
-    }
-
-    public function getContainer():Container
-    {
-        return $this->container;
     }
 }

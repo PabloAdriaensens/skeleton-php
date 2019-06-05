@@ -1,12 +1,10 @@
 <?php
-/* porque esta dentro de una carpeta de app */
-namespace App\controllers;
-use App\ViewManager;
 
-class WhoController
+namespace App\controllers;
+
+class WhoController extends Controller
 {
     public function index() {
-        $viewManager = new ViewManager();
-        $viewManager->renderTemplate("who.view.html");
+        $this->viewManager->renderTemplate("who.view.html");
     }
 }
