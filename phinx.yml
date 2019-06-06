@@ -17,7 +17,7 @@ environments:
     development:
         adapter: mysql
         host: localhost
-        name: blogphp
+        name: skeletondb
         user: root
         pass: 'asdfgqwert12345'
         port: 3306
