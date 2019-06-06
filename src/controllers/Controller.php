@@ -5,6 +5,7 @@ namespace App\controllers;
 use App\ViewManager;
 use DI\Container;
 use App\LogManager;
+use App\DoctrineManager;
 
 abstract class Controller
 {
@@ -19,5 +20,5 @@ abstract class Controller
         $this->logger = $this->container->get(LogManager::class);
         $this->logger->info("Clase ".get_class($this)." carnada");
     }
-    public abstract function index();
+    public abstract function index(DoctrineManager $doctrine);
 }
